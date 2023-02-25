@@ -4,9 +4,12 @@
   "description": "Readems Organisation",
   "main": "server.js",
   "scripts": {
-    "start:dev": "nodemon",
+    "client": "npm run dev --prefix frontend",
+    "server": "nodemon",
+    "start:dev": "concurrently \"npm run client\" \"npm run server\" ",
     "start:prod": "node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/server/server.js",
-    "build": "tsc"
+    "build": "tsc",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Timothy Attah",
   "license": "MIT",
