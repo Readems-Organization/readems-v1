@@ -5,11 +5,5 @@
       "server": "server.ts",
       "use": "@now/node"
     }
-  ],
-  "routes": [
-    {
-      "server": "/(.*)",
-      "dest": "server.ts"
-    }
   ]
 }
