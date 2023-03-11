@@ -2,12 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "server": "server.js",
+      "server": "server.ts",
       "use": "@now/node"
-    },
-    { "server": "*.html", "use": "@vercel/static" },
-    { "server": "*.js", "use": "@vercel/node" },
-    { "server": "*.ts", "use": "@vercel/node" }
+    }
   ],
   "routes": [
     {
