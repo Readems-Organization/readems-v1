@@ -5,8 +5,8 @@
     "module": "CommonJS",
     "lib": ["es6", "dom"],
     "allowJs": true,
-    "outDir": "dist",
-    "rootDir": ".",
+    "outDir": "build",
+    "rootDir": "server",
     "removeComments": true,
 
     /* Strict Type Checking Options*/
@@ -16,10 +16,11 @@
     /* Module Resolution Options*/
     "moduleResolution": "node",
     "baseUrl": ".",
-    "paths": {
-      "@server/*": ["server/*"]
-    },
+    // "paths": {
+    //   "@server/*": ["server/*"]
+    // },
     "esModuleInterop": true,
+    "resolveJsonModule": true,
 
     /* Experimental Options*/
     "experimentalDecorators": true,
@@ -32,5 +33,5 @@
     "sourceMap": true
   },
   "include": ["server"],
-  "exclude": ["node_modules", "dist", "coverage"]
+  "exclude": ["node_modules", "dist", "build", "coverage"]
 }

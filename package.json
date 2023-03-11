@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "client": "npm start --prefix frontend",
-    "server": "nodemon",
+    "server": "npx nodemon",
     "start:dev": "concurrently \"npm run client\" \"npm run server\" ",
-    "start:prod": "node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/server/server.js",
-    "build": "tsc",
+    "start:prod": "npm run build && node build/server.js",
+    "build": "rimraf ./build && tsc",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Timothy Attah",
@@ -22,8 +22,7 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.1",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -46,7 +45,9 @@
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^2.0.21",
     "prettier": "^2.8.4",
+    "rimraf": "^4.4.0",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "tsc-watch": "^6.0.0",

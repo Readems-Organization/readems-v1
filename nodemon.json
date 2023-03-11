@@ -1,8 +1,8 @@
 {
   "watch": ["server"],
-  "ext": "ts,js,json",
+  "ext": ".ts,.js,json",
   "ignore": ["node_modules", "coverage", "dist"],
-  "exec": "ts-node -r tsconfig-paths/register ./server/server.ts",
+  "exec": "npx ts-node ./server/server.ts",
   "restartable": "rs",
   "env": {
     "NODE_ENV": "development"
